@@ -1,0 +1,13 @@
+#gerando report via: rake specs["-t @tag"]
+default: -p ci
+bdd: --format pretty
+dot: --format progress
+html: --format html --out=log/report.html
+json: --format json --out=log/report.json
+ci: -p json -p pretty
+dev: ENV_TYPE=dev
+dev_toolbox: ENV_TYPE=dev_toolbox
+hmg: ENV_TYPE=hmg
+headless: BROWSER=headless
+pretty: --format pretty
+progress: --format progress
