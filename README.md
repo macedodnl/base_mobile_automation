@@ -78,7 +78,6 @@
 
 13 - Execução dos testes:
 
-Obs.: Está configurada a execução atraves do chrome_headless para CI.
 
     13.1 - Executar os testes de forma padrão:
 
