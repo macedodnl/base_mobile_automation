@@ -10,9 +10,10 @@ task :specs, [:tags] do |task, args|
 end
 
 #criando email
-remetente = "daniel.jocken@gwsistemas.com.br"
-senha = "dNl@2020!gWsis"
-dominio = "smtp.gwsistemas.com.br"
+#smtp sem tls
+remetente = "@com.br"
+senha = ""
+dominio = "smtp.com.br"
 destinatario = "macedodnl@gmail.com"
 port = 587
 
@@ -57,7 +58,6 @@ msg_and_attach = msg + part2 + attch
 
 task :enviar_report do
   Net::SMTP.new("#{dominio}", port).start("automacaodomain.com", "#{remetente}", "#{senha}", "login") do |smtp|
-    #smtp.starttls()
     smtp.send_message msg_and_attach,
                       "#{remetente}",
                       "#{destinatario}"

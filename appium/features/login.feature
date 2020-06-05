@@ -15,7 +15,3 @@ Cenário: Efetuar autenticação com falha
     Dado que eu acesse a tela de login
     Quando eu faço login com "tony@stark.com" e "!@#"
     Então posso ver a tela minha conta
-
-
-#Email: report.sendaut@mail2expert.com
-#Pass: MVZgZWsu2u4E8H4
