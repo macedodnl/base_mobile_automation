@@ -74,6 +74,8 @@
 
 12 - Configurar device no arquivo: "base_mobile_automation\appium\features\support\caps\appium.txt"
 
+    Obs.: como configuração padrão existe um device do genymotion com android 5.0.
+
 13 - Execução dos testes:
 
 Obs.: Está configurada a execução atraves do chrome_headless para CI.

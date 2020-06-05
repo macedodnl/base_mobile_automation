@@ -10,6 +10,12 @@ task :specs, [:tags] do |task, args|
 end
 
 #criando email
+remetente = "daniel.jocken@gwsistemas.com.br"
+senha = "dNl@2020!gWsis"
+dominio = "smtp.gwsistemas.com.br"
+destinatario = "macedodnl@gmail.com"
+port = 587
+
 marker = "AUNIQUEMARKER"
 time = Time.now.utc.iso8601
 report_path = "test_report.html"
@@ -22,8 +28,8 @@ Em anexo o relatório de execução: Mobile_Test_Report.html
 EOF
 
 msg = <<-EOF
-From: QA - Mobile Automation <daniel.jocken@gwsistemas.com.br>
-To: All <macedodnl@gmail.com>, <rprttmtn@gmail.com>
+From: QA - Mobile Automation <#{remetente}>
+To: All <#{destinatario}>
 Subject: Report automation run at #{time}
 MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary=#{marker}
@@ -50,11 +56,11 @@ EOF
 msg_and_attach = msg + part2 + attch
 
 task :enviar_report do
-  Net::SMTP.new("smtp.gwsistemas.com.br", 587).start("automacaodomain.com", "daniel.jocken@gwsistemas.com.br", "dNl@2020!gWsis", "login") do |smtp|
+  Net::SMTP.new("#{dominio}", port).start("automacaodomain.com", "#{remetente}", "#{senha}", "login") do |smtp|
+    #smtp.starttls()
     smtp.send_message msg_and_attach,
-                      "daniel.jocken@gwsistemas.com.br",
-                      "macedodnl@gmail.com",
-                      "rprttmtn@gmail.com"
+                      "#{remetente}",
+                      "#{destinatario}"
   end
 rescue => e
   puts e
