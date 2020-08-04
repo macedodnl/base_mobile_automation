@@ -54,7 +54,7 @@
 
 8 - Clone or download repository
 
-9 - Instalar bundle "gem intall bundle"
+9 - Instalar bundle "gem install bundle"
 
 10 - Instalar as demais gems "bundle install"
 
